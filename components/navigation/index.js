@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { BottomNavigation, BottomNavigationAction } from "@material-ui/core";
 import {
     Home as HomeIcon,
@@ -5,10 +6,33 @@ import {
     LocalMall as LocalMallIcon,
     Person as PersonIcon
 } from "@material-ui/icons";
+import Router from "next/router";
 
-const Navigation = () => {
+const Navigation = pathname => {
+    const [active, setActive] = useState(pathname);
     return (
-        <BottomNavigation value="recent">
+        <BottomNavigation
+            value={active}
+            onChange={(event, newValue) => {
+                setActive(newValue);
+                switch (newValue) {
+                    case "home":
+                        Router.push("/");
+                        return;
+                    case "search":
+                        Router.push("/search");
+                        return;
+                    case "cart":
+                        Router.push("/cart");
+                        return;
+                    case "account":
+                        Router.push("/account");
+                        return;
+                    default:
+                        return;
+                }
+            }}
+        >
             <BottomNavigationAction
                 label="Home"
                 value="home"
@@ -31,6 +55,6 @@ const Navigation = () => {
             />
         </BottomNavigation>
     );
-}
+};
 
 export default Navigation;
