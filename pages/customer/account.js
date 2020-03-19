@@ -1,14 +1,10 @@
-import Home from "../src/components/home";
-import Layout from "../src/theme/layout";
+import Account from "../../src/components/customer/account";
+import Layout from "../../src/theme/layout";
 
 export async function getStaticProps() {
-
-    // Page Configuration:
-    // - title
-    // - className
     const pageConfig = {
-        title: "Homepage",
-        className: "home"
+        title: "Customer Dashboard",
+        className: "account dashboard"
     };
 
     // By returning { props: pageConfig }, the Page component
@@ -20,4 +16,4 @@ export async function getStaticProps() {
     };
 }
 
-export default Layout(Home);
+export default Layout(Account);

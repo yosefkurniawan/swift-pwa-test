@@ -1,14 +1,10 @@
-import Home from "../src/components/home";
-import Layout from "../src/theme/layout";
+import Cart from "../../src/components/checkout/cart";
+import Layout from "../../src/theme/layout";
 
 export async function getStaticProps() {
-
-    // Page Configuration:
-    // - title
-    // - className
     const pageConfig = {
-        title: "Homepage",
-        className: "home"
+        title: "Shopping Cart",
+        className: "cart"
     };
 
     // By returning { props: pageConfig }, the Page component
@@ -20,4 +16,4 @@ export async function getStaticProps() {
     };
 }
 
-export default Layout(Home);
+export default Layout(Cart);

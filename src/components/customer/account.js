@@ -1,7 +1,7 @@
-const Account = () => {
+const Account = (props) => {
     return (
         <div>
-            <h1>Customer Dashboard</h1>
+            <h1>{props.pageConfig.title}</h1>
         </div>
     );
 }

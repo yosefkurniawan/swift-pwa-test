@@ -3,8 +3,8 @@ import App from "next/app";
 import Head from "next/head";
 import { ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import theme from "../src/theme";
-import Navigation from "../src/components/navigation";
+import theme from "../src/theme/theme";
+import "../src/styles/index.css";
 
 export default class MyApp extends App {
     componentDidMount() {
@@ -17,11 +17,14 @@ export default class MyApp extends App {
 
     render() {
         const { Component, pageProps } = this.props;
-
+        const title = pageProps.pageConfig && pageProps.pageConfig.title
+            ? pageProps.pageConfig.title
+            : "Swift PWA";
+        
         return (
             <React.Fragment>
                 <Head>
-                    <title>Swift PWA</title>
+                    <title>{title}</title>
                     <meta
                         name="viewport"
                         content="minimum-scale=1, initial-scale=1, width=device-width"
@@ -30,9 +33,7 @@ export default class MyApp extends App {
                 <ThemeProvider theme={theme}>
                     {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
                     <CssBaseline />
-                    <header>Header</header>
                     <Component {...pageProps} />
-                    <Navigation/>
                 </ThemeProvider>
             </React.Fragment>
         );
