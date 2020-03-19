@@ -1,5 +1,5 @@
-import Cart from "../../src/components/checkout/cart";
-import Layout from "../../src/theme/layout";
+import Cart from "../src/components/cart";
+import Layout from "../src/theme/layout";
 
 export async function getStaticProps() {
     const pageConfig = {

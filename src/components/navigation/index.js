@@ -29,7 +29,7 @@ const Navigation = pathname => {
                             setOpenSearch(true);
                             return;
                         case "cart":
-                            Router.push("/checkout/cart");
+                            Router.push("/cart");
                             return;
                         case "account":
                             Router.push("/customer/account");

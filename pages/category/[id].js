@@ -1,4 +1,4 @@
-import Category from "../../src/components/catalog/category";
+import Category from "../../src/components/category";
 import Layout from "../../src/theme/layout";
 
 export async function getServerSideProps() {
