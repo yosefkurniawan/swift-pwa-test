@@ -1,4 +1,4 @@
-import Product from "../../src/components/catalog/product";
+import Product from "../../src/components/pages/catalog/product";
 import Layout from "../../src/theme/layout";
 
 export async function getServerSideProps() {

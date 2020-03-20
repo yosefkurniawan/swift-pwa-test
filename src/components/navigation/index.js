@@ -7,7 +7,7 @@ import {
     Person as PersonIcon
 } from "@material-ui/icons";
 import Router from "next/router";
-import Search from "../search";
+import Search from "../pages/search";
 
 const Navigation = pathname => {
     const [active, setActive] = useState(pathname);

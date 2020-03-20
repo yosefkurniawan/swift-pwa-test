@@ -1,5 +1,5 @@
-import Home from "../src/components/home";
-import Layout from "../src/theme/layout";
+import Home from "../src/components/pages/home";
+import Layout from "../src/components/layouts";
 
 export async function getStaticProps() {
 

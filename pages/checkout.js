@@ -1,4 +1,4 @@
-import Checkout from "../src/components/checkout";
+import Checkout from "../src/components/pages/checkout";
 import Layout from "../src/theme/layout";
 
 export async function getStaticProps() {

@@ -1,5 +1,5 @@
-import Account from "../../src/components/customer/account";
-import Layout from "../../src/theme/layout";
+import Account from "../../src/components/pages/customer/account";
+import Layout from "../../src/components/layouts";
 
 export async function getStaticProps() {
     const pageConfig = {
