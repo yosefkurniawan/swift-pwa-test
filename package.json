@@ -3,15 +3,32 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "cross-env NODE_ENV=development node server.js",
     "build": "next build",
-    "start": "next start"
+    "export": "next export",
+    "clean": "cross-env rimraf ./.next ./out",
+    "release": "cross-env NODE_ENV=production npm run clean && npm run build && npm run export",
+    "start": "next start",
+    "stage": "cross-env NODE_ENV=production node server.js",
+    "generate-certs": "mkdir certs && openssl req -x509 -days 365 -newkey rsa:2048 -nodes -sha256 -keyout certs/privateKey.key -out certs/certificate.crt"
   },
   "dependencies": {
     "@material-ui/core": "^4.9.5",
     "@material-ui/icons": "^4.9.1",
+    "eventemitter3": "^4.0.0",
+    "fastify": "^2.12.1",
+    "fastify-nextjs": "^4.1.1",
+    "fastify-static": "^2.6.0",
+    "i18next": "^19.3.3",
     "next": "9.3.0",
+    "next-i18next": "^4.2.1",
     "react": "16.13.0",
-    "react-dom": "16.13.0"
+    "react-dom": "16.13.0",
+    "react-owl-carousel": "^2.3.1",
+    "react-typed": "^1.2.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2",
+    "rimraf": "^3.0.2"
   }
 }

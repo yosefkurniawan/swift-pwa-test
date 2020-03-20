@@ -1,5 +1,5 @@
-import Category from "../../src/components/category";
-import Layout from "../../src/theme/layout";
+import Category from "../../src/components/pages/category";
+import Layout from "../../src/components/layouts";
 
 export async function getServerSideProps() {
     const pageConfig = {

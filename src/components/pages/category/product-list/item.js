@@ -1,4 +1,4 @@
-import { priceFormat } from "../../helpers/priceHelper.js";
+import { priceFormat } from "../../../commons/price/priceFormat";
 
 const price = priceFormat(100000);
 

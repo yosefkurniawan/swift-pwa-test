@@ -1,5 +1,5 @@
-import Product from "../../src/components/pages/catalog/product";
-import Layout from "../../src/theme/layout";
+import Product from "../../src/components/pages/product";
+import Layout from "../../src/components/layouts";
 
 export async function getServerSideProps() {
     const pageConfig = {

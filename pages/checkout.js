@@ -1,5 +1,5 @@
 import Checkout from "../src/components/pages/checkout";
-import Layout from "../src/theme/layout";
+import Layout from "../src/components/layouts";
 
 export async function getStaticProps() {
     const pageConfig = {
