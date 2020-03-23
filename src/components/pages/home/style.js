@@ -8,13 +8,14 @@ const useStyles = makeStyles(theme => ({
     flexDirection: "column",
     backgroundColor: GRAY_PRIMARY
   },
-  header: {
-    backgroundColor: GRAY_PRIMARY,
+  slider: {
     height: "100%",
     width: "100%",
     display: "flex",
-    justifyContent: "center",
-    position: "relative"
+    justifyContent: "center"
+  },
+  header : {
+    backgroundColor: GRAY_PRIMARY,
   },
   logo: {
     position: "absolute",

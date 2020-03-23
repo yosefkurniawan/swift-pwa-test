@@ -6,6 +6,7 @@ main {
     display:  flex;
     width: 100%;
     justify-content: center;
+    font-family: Montserrat;
 }
 
 /* Bottom Navigation */
