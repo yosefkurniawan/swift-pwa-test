@@ -2,7 +2,7 @@ import Filter from "./filter"
 import Sorting from "./sorting"
 import ProductList from "./product-list"
 import Head from "next/head";
-import Layout from "../../theme/layout";
+import Layout from "../../layouts";
 
 const Category = () => {
     return (

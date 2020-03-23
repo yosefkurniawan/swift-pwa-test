@@ -15,7 +15,7 @@ const Layout = (Page, props) => {
                 <div>
                     <header></header>
                     <main>
-                        <div className={`page${className}`}>
+                        <div className="pages">
                             <Page {...this.props} />
                         </div>
                     </main>

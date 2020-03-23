@@ -7,7 +7,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import Slide from "@material-ui/core/Slide";
 import { InputBase, Link } from "@material-ui/core";
 
-import useStyles from "./styles";
+import useStyles from "./style";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="left" ref={ref} {...props} />;
