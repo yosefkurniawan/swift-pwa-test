@@ -1,44 +1,21 @@
-const port = parseInt(process.env.PORT, 10) || 5000;
-const dev =  "production";
-const conf = require("./next.config");
-const fastify = require("fastify")();
-const path = require('path');
-// --------------------------------------------------------
-// Next routes & rendering configuration
-// --------------------------------------------------------
-const nextI18NextMiddleware = require("next-i18next/middleware").default;
-const nextI18next = require("./i18n");
-const initNext = async () => {
-  // configure next-i18next middleware in our fastify server
-  fastify.register((instance, opts, next) => {
-    instance.use(nextI18NextMiddleware(nextI18next));
-    next();
-  });
+const express = require('express')
+const next = require('next')
+const nextI18NextMiddleware = require('next-i18next/middleware').default
 
-  // start and configure next.js with fastify
-  fastify.register(require("fastify-nextjs"), { dev, conf }).after(() => {
-    fastify.next("/");
-    fastify.next("/about");
-  });
+const nextI18next = require('./i18n')
 
-  // configure static serving for assets
-  fastify.register((instance, opts, next) => {
-    instance.register(require("fastify-static"), {
-      root: path.join(__dirname, "public"),
-      prefix: "/"
-    });
-    next();
-  });
-};
+const port = process.env.PORT || 3000
+const app = next({ dev: process.env.NODE_ENV !== 'production' })
+const handle = app.getRequestHandler();
 
-// --------------------------------------------------------
-// Fastify server startup
-// --------------------------------------------------------
-(async function() {
-  await initNext();
+(async () => {
+  await app.prepare()
+  const server = express()
 
-  await fastify.listen(port, err => {
-    if (err) throw err;
-    console.log(`Server listenging on http://localhost:${port}`);
-  });
-})();
+  server.use(nextI18NextMiddleware(nextI18next))
+
+  server.get('*', (req, res) => handle(req, res))
+
+  await server.listen(port)
+  console.log(`> Ready on http://localhost:${port}`)
+})()

@@ -1,7 +1,7 @@
 const webpack = require('webpack');
-const env = require("./env.js");
+const withCSS = require('@zeit/next-css')
 
-const nextConfig = {
+module.exports = withCSS({
   webpack: (config, { dev }) => {
 
     config.plugins.push(
@@ -18,11 +18,4 @@ const nextConfig = {
     return config
   },
   compress : false
-}
-
-
-
-module.exports = () => {
-  nextConfig.env = env;
-  return nextConfig;
-};
+})

@@ -1,25 +1,30 @@
 import { makeStyles } from "@material-ui/core/styles";
-import { GRAY_PRIMARY } from "../../../theme/colors";
+import { GRAY_PRIMARY, WHITE } from "../../../theme/colors";
 const useStyles = makeStyles(theme => ({
   container: {
-    width: "100vh",
-    height: "100vw",
+    width: "100vw",
+    height: "100vh",
     display: "flex",
-    flexDirection: "column"
+    flexDirection: "column",
+    backgroundColor: GRAY_PRIMARY
   },
   header: {
     backgroundColor: GRAY_PRIMARY,
-    height: '100%',
-    width: '100%',
-    display : 'flex',
-    justifyContent : "center",
-    position : 'relative'
+    height: "100%",
+    width: "100%",
+    display: "flex",
+    justifyContent: "center",
+    position: "relative"
   },
-  logo : {
-      position : 'absolute',
-    
+  logo: {
+    position: "absolute",
+    zIndex : 99
+  },
+  titleLogo: {
+    fontWeight: "bold",
+    fontFamily: "Playfair Display",
+    color : WHITE
   }
-
 }));
 
 export default useStyles;
