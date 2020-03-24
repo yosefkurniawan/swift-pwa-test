@@ -7,7 +7,7 @@ const useStyles = makeStyles(theme => ({
   },
   body : {
     ...Centering,
-    ...CreatePadding(50,80,80,80),
+    ...CreatePadding('auto',80,80,80),
     justifyContent : 'space-between'
   },
   item : {

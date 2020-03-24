@@ -1,7 +1,7 @@
 import { createMuiTheme } from "@material-ui/core/styles";
 import { red } from "@material-ui/core/colors";
 import { GRAY_PRIMARY, PRIMARY, SECONDARY, WHITE } from './colors'
-import { FONT_24, FONT_DEFAULT } from "./typography";
+import { FONT_24, FONT_DEFAULT, FONT_REGULER } from "./typography";
 
 // Create a theme instance.
 const theme = createMuiTheme({
@@ -28,11 +28,7 @@ const theme = createMuiTheme({
         },
         MuiTextField : {
             root : {
-                borderBottom : `1px solid ${PRIMARY}`,
-                '&placeholder' : {
-                    fontWeight : '500',
-                    color : GRAY_PRIMARY
-                }
+                ...FONT_REGULER
             },
         },
         MuiTypography : {

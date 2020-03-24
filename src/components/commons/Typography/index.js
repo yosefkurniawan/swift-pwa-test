@@ -9,14 +9,16 @@ const Component = ({
   type,
   className = {},
   children,
-  align = "left"
+  align = "left",
+  letter = ''
 }) => {
   const styles = useStyles();
   let customStyle = classNames(
     styles.root,
+    styles[letter],
     styles[variant],
     styles[type],
-    className
+    className,
   );
   return (
     <Typography variant={variant} className={customStyle} align={align}>

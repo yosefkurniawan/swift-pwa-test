@@ -16,9 +16,21 @@ export const CreateMargin = (top = 0, right = 0, bottom = 0, left = 0) => {
   };
 };
 
+
+export const FlexRow = {
+    display: "flex",
+    flexDirection: "row"
+  };
+  
+  export const FlexColumn = {
+    display: "flex",
+    flexDirection: "column"
+  };
+  
+
 export const Centering = {
-  display: "flex",
-  flexDirection : 'column',
+  ...FlexColumn,
   justifyContent: "center",
   alignItems: "center"
 };
+

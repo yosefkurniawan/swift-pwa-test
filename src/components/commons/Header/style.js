@@ -3,7 +3,7 @@ import { CreatePadding, CreateMargin } from '../../../theme/mixins'
 
 const useStyles = makeStyles(theme => ({ 
     container : {
-        ...CreatePadding(18,18,18,18),
+        ...CreatePadding(10,10,10,10),
         width : '100%',
         height : '10vh',
         display : 'flex',
@@ -12,14 +12,18 @@ const useStyles = makeStyles(theme => ({
         ...CreateMargin(0,0,18,0)
     },
     leftContainer : {
-        alignItems : 'flex-start',
+        justifyContent : 'flex-start',
+        alignItems : 'center'
     },
     rightContainer : {
         alignItems : 'flex-end',
     },
     centerContainer : {
         alignItems : 'center',
-    }
+    },
+    backIcon : {
+        fontSize : 30
+    },
 }))
 
 export default useStyles;

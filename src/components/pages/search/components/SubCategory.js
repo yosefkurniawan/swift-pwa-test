@@ -12,7 +12,7 @@ const Component = ({ open, data, category, onBack }) => {
     <Slide
       direction="left"
       in={open}
-      timeout={2000}
+      timeout={1500}
       mountOnEnter
       unmountOnExit
     >

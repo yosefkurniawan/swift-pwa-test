@@ -21,8 +21,9 @@ const Component = ({ LeftComponent, CenterComponent, RightComponent }) => {
                 LeftComponent.onClick) ||
               back()
             }
+            className={styles.btmBack}
           >
-            <ArrowBack />
+            <ArrowBack className={styles.backIcon}/>
           </Button>
         )}
       </div>
