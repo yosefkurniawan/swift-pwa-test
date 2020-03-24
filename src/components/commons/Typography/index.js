@@ -27,7 +27,7 @@ const Component = ({
 
 Component.propTypes = {
   variant: PropTypes.oneOf(["h1", "h2", "h3", "h6", "p", "span", "title"]),
-  type: PropTypes.oneOf(["bold", "italic"]),
+  type: PropTypes.oneOf(["bold", "italic", 'semiBold']),
   className: PropTypes.object
 };
 

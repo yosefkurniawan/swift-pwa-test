@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
   },
   itemContainer : {
       minWidth : 233,
-      maxWidth : '80vw',
+      maxWidth : '80%',
       display : 'flex',
       flexDirection : 'column',
       height : '100%'

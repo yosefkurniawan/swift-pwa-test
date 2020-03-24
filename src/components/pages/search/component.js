@@ -1,90 +1,68 @@
-import Dialog from "@material-ui/core/Dialog";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import IconButton from "@material-ui/core/IconButton";
-import ArrowBackIcon from "@material-ui/icons/ArrowBack";
-import SearchIcon from "@material-ui/icons/Search";
-import Slide from "@material-ui/core/Slide";
-import { InputBase, Link } from "@material-ui/core";
-
+import React, { useState } from "react";
 import useStyles from "./style";
+import Header from "../../commons/Header";
+import TextField from "../../commons/Forms/TextField";
+import Typography from "../../commons/Typography";
+import Button from "../../commons/Button";
+import { Slide, IconButton } from "@material-ui/core";
+import { ArrowBack } from "@material-ui/icons";
+import CategorySlider from "./components/Category";
+import SubCategorySlider from "./components/SubCategory";
 
-const Transition = React.forwardRef(function Transition(props, ref) {
-  return <Slide direction="left" ref={ref} {...props} />;
-});
+const data = [
+  "Subcategory One",
+  "Subcategory Two",
+  "Subcategory Three",
+  "Subcategory Four",
+  "Subcategory Five"
+];
 
-function Search(props) {
-  const classes = useStyles();
-  const open = props.open;
+const Component = props => {
+  const styles = useStyles();
+  const [category, setCategory] = useState("");
+  const [showCat, setShowCat] = useState(true);
+  const [showSubCat, setShowSubCat] = useState(false);
+  const openSub = cat => {
+    setCategory(cat);
+    setShowSubCat(true);
+    setShowCat(false);
+  };
 
-  const handleClose = () => {
-    props.setOpen(false);
+  const closeSub = () => {
+    setCategory("");
+    setShowSubCat(false);
+    setShowCat(true);
   };
 
   return (
-    <div>
-      <Dialog
-        fullScreen
-        open={open}
-        onClose={handleClose}
-        TransitionComponent={Transition}
-      >
-        <AppBar className={classes.appBar}>
-          <Toolbar>
-            <IconButton
-              edge="start"
-              color="inherit"
-              onClick={handleClose}
-              aria-label="close"
-            >
-              <ArrowBackIcon />
-            </IconButton>
-          </Toolbar>
-        </AppBar>
-        <div className={classes.dialogContent}>
-          <div className="searcbox">
-            <InputBase
-              className={classes.input}
-              placeholder="Search..."
-              inputProps={{ "aria-label": "search..." }}
+    <Slide in={true} direction="right" timeout={2000}>
+      <div className={styles.container}>
+        <Header
+          CenterComponent={
+            <TextField placeholder="Search..." disabled={true} />
+          }
+        />
+        <>
+          {category === "" ? (
+            <CategorySlider
+              data={data}
+              open={showCat}
+              {...props}
+              onClick={openSub}
             />
-            <IconButton
-              type="submit"
-              className={classes.iconButton}
-              aria-label="search"
-            >
-              <SearchIcon />
-            </IconButton>
-          </div>
-          <div className="category-list">
-            <h2>NEW IN COLLECTION</h2>
-            <div>
-              <Link href="#">
-                <a>Subcategory</a>
-              </Link>
-            </div>
-            <div>
-              <Link href="#">
-                <a>Subcategory</a>
-              </Link>
-            </div>
-            <div>
-              <Link href="#">
-                <a>Subcategory</a>
-              </Link>
-            </div>
-            <div>
-              <Link href="#">
-                <a>Subcategory</a>
-              </Link>
-            </div>
-            <h2>BACK IN STOCK</h2>
-            <h2>SALE</h2>
-          </div>
-        </div>
-      </Dialog>
-    </div>
+          ) : (
+            <SubCategorySlider
+              data={data}
+              open={showSubCat}
+              {...props}
+              category={category}
+              onBack={closeSub}
+            />
+          )}
+        </>
+      </div>
+    </Slide>
   );
-}
+};
 
-export default Search;
+export default Component;
