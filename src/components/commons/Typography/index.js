@@ -9,14 +9,16 @@ const Component = ({
   type,
   className = {},
   children,
-  align = "left"
+  align = "left",
+  letter = ''
 }) => {
   const styles = useStyles();
   let customStyle = classNames(
     styles.root,
+    styles[letter],
     styles[variant],
     styles[type],
-    className
+    className,
   );
   return (
     <Typography variant={variant} className={customStyle} align={align}>
@@ -27,7 +29,7 @@ const Component = ({
 
 Component.propTypes = {
   variant: PropTypes.oneOf(["h1", "h2", "h3", "h6", "p", "span", "title"]),
-  type: PropTypes.oneOf(["bold", "italic"]),
+  type: PropTypes.oneOf(["bold", "italic", 'semiBold','reguler']),
   className: PropTypes.object
 };
 

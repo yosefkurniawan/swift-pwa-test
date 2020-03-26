@@ -4,5 +4,9 @@
   },
   "product" : {
     "title_product" : "Nama Produk"
+  },
+  "search" : {
+    "mainTitle" : "Koleksi terbaru",
+    "backTitle" : "kembali ke produk"
   }
 }

@@ -10,7 +10,7 @@ const useStyles = makeStyles(theme => ({
   },
   imageContainer : {
       minWidth : 345,
-      maxWidth : '95vw',
+      maxWidth : '95%',
       height : 168,
       display : 'flex',
       justifyContent : 'center',
