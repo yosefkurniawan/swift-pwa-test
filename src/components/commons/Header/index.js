@@ -1,13 +1,16 @@
 import React from "react";
 import useStyles from "./style";
 import checkComponent from "../../../helpers/checkComponent";
-import { Button } from "@material-ui/core";
+import { Button, NoSsr } from "@material-ui/core";
 import { ArrowBack } from "@material-ui/icons";
 import Typography from "../Typography";
+import { useRouter } from "next/router";
 
-const Component = ({ LeftComponent, CenterComponent, RightComponent }) => {
+
+const Header = ({ LeftComponent, CenterComponent, RightComponent }) => {
   const styles = useStyles();
-  const back = () => {};
+  const route = useRouter()
+  const back = () => { route.back() };
   return (
     <div className={styles.container}>
       <div className={styles.leftContainer}>
@@ -19,7 +22,7 @@ const Component = ({ LeftComponent, CenterComponent, RightComponent }) => {
               (LeftComponent &&
                 LeftComponent.onClick &&
                 LeftComponent.onClick) ||
-              back()
+              back
             }
             className={styles.btmBack}
           >
@@ -42,5 +45,7 @@ const Component = ({ LeftComponent, CenterComponent, RightComponent }) => {
     </div>
   );
 };
+
+const Component = (props) => (<NoSsr><Header {...props} /></NoSsr>)
 
 export default Component;

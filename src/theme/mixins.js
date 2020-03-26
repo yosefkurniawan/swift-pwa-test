@@ -34,3 +34,12 @@ export const Centering = {
   alignItems: "center"
 };
 
+export const showHide = {
+  show : {
+    display : 'block'
+  },
+  hide : {
+    display : 'none'
+  }
+}
+
