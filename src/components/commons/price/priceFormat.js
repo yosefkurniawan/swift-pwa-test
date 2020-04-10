@@ -1,4 +1,4 @@
-export const IDR = (value) => {
+export const priceFormat = (value) => {
     let number = 0;
     if(Number.isInteger(value)){
         number = parseInt(value)

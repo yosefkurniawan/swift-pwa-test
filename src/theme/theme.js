@@ -1,20 +1,22 @@
 import { createMuiTheme } from "@material-ui/core/styles";
 import { red } from "@material-ui/core/colors";
+import { GRAY_PRIMARY, PRIMARY, SECONDARY, WHITE } from './colors'
+import { FONT_24, FONT_DEFAULT, FONT_REGULER } from "./typography";
 
 // Create a theme instance.
 const theme = createMuiTheme({
     palette: {
         primary: {
-            main: "#000000",
+            main: PRIMARY,
         },
         secondary: {
-            main: "#818181"
+            main: SECONDARY
         },
         error: {
             main: red.A400
         },
         background: {
-            default: "#fff"
+            default: WHITE
         }
     },
     overrides : {
@@ -23,12 +25,23 @@ const theme = createMuiTheme({
                 padding : 0,
                 margin : 0
             }
+        },
+        MuiTextField : {
+            root : {
+                ...FONT_REGULER
+            },
+        },
+        MuiTypography : {
+            h1 : {
+                ...FONT_24,
+                ...FONT_DEFAULT
+            }
         }
     },
     props: {
         MuiTypography: {
           variantMapping: {
-            h1: 'h3',
+            h1: 'h1',
             h2: 'h3',
             h3: 'h3',
             h4: 'h3',
@@ -39,9 +52,8 @@ const theme = createMuiTheme({
             body1: 'span',
             body2: 'span',
           },
-        },
+        }
       },
-
 });
 
 export default theme;

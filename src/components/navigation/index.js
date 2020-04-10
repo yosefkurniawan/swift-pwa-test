@@ -7,7 +7,6 @@ import {
     Person as PersonIcon
 } from "@material-ui/icons";
 import Router from "next/router";
-import Search from "../pages/search";
 
 const Navigation = pathname => {
     const [active, setActive] = useState(pathname);
@@ -15,7 +14,6 @@ const Navigation = pathname => {
 
     return (
         <>
-            <Search open={openSearch} setOpen={setOpenSearch} />
             <BottomNavigation
                 className="bottom-navigation"
                 value={active}
@@ -26,7 +24,7 @@ const Navigation = pathname => {
                             Router.push("/");
                             return;
                         case "search":
-                            setOpenSearch(true);
+                            Router.push('/search')
                             return;
                         case "cart":
                             Router.push("/cart");

@@ -1,14 +1,10 @@
-import Layout from "../../../src/components/layouts";
-import Login from "../../../src/components/pages/customer/login";
+import Search from "../src/components/pages/search";
+import Layout from "../src/components/layouts";
 
 export async function getStaticProps() {
-
-    // Page Configuration:
-    // - title
-    // - className
     const pageConfig = {
-        title: "Login",
-        className: "login"
+        title: "Shearch Product",
+        className: "search"
     };
 
     // By returning { props: pageConfig }, the Page component
@@ -20,4 +16,4 @@ export async function getStaticProps() {
     };
 }
 
-export default Layout(Login);
+export default Layout(Search);

@@ -4,6 +4,10 @@
     },
     "product" : {
       "titleProduct" : "Product Name"
+    },
+    "search" : {
+      "mainTitle" : "New in Collection",
+      "backTitle" : "back in stock sale"
     }
   }
   

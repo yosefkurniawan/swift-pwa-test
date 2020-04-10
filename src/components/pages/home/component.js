@@ -27,7 +27,7 @@ const Component = ({ t }) => {
   const headerClass = classNames(styles.slider, styles.header);
   return (
     <Box className={styles.container}>
-      <Grid container spacing={10}>
+      <Grid container spacing={10} justify='space-between'>
         <Grid item sm={12} md={12} lg={12} xs={12}>
           <div className={headerClass}>
             <div className={styles.logo}>

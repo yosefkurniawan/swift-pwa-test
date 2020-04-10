@@ -2,7 +2,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { GRAY_PRIMARY, WHITE } from "../../../theme/colors";
 const useStyles = makeStyles(theme => ({
   container: {
-    width: "100vw",
+    width: "100%",
     height: "100vh",
     display: "flex",
     flexDirection: "column",
@@ -16,6 +16,7 @@ const useStyles = makeStyles(theme => ({
   },
   header : {
     backgroundColor: GRAY_PRIMARY,
+    position : 'relative'
   },
   logo: {
     position: "absolute",
